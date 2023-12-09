@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagrammar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <div id="intro-screen" class="screen">
+        <div id="title-container"></div>
+        <p id="credit-text">The next anagram will begin shortly.</p>
+    </div>
+    <div id="menu-screen" class="screen">
+        <div id="menu-side-bar">
+            <div id="profile-icon-container">
+                A
+            </div>
+            <div id="player-type-container">
+                <div alt="singeplayer" class="player-type-button active-player-type" id="single-player-button"></div>
+                <div alt="multiplayer" class="player-type-button" id="multi-player-button"></div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="youtube-logo" id="youtube-icon" onclick="window.open('https://www.youtube.com/channel/UC0Wet2dyAK1y8tHtnRoi5YA')">
+        </div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="scripts/index-ui.js" type="module"></script>
+<script src="scripts/authenticate-user.js" type="module"></script>
+
+</html>
