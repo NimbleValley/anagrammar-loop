@@ -20,6 +20,7 @@ const creditText = document.getElementById("credit-text");
 setUpTitle();
 
 async function setUpTitle() {
+    creditText.style.display = "none";
     titleContainer.innerHTML = "";
     for (var i = 0; i < titleText.length; i++) {
         var temp = document.createElement("span");
@@ -30,20 +31,23 @@ async function setUpTitle() {
         titleContainer.appendChild(temp);
     }
     animateIntroScreen();
+    creditText.style.display = "none";
 }
 
 async function animateIntroScreen() {
+    creditText.style.display = "none";
     var tl = new TimelineMax();
     titleContainer.style.top = "25vh";
     titleContainer.style.opacity = 1;
     creditText.style.display = "none";
+    tl.fromTo(creditText, 1.5, {opacity: 0, scale: 0.5}, {opacity: 1, scale: 1}, '-=0');
     await sleep(250);
+    creditText.style.display = "none";
     
     spans.forEach(element => {
         tl.fromTo(element, 0.5, {opacity: 0, fontSize: "6.5vw"}, {opacity: 1, fontSize: "10vw"}, '-=0.4');
     });
     
-    tl.fromTo(creditText, 1.5, {opacity: 0, scale: 0.5}, {opacity: 1, scale: 1}, '-=1');
     
     tl.to(titleContainer, 1.5, {top: "5vh"}, '+=0.75');
     
@@ -61,7 +65,7 @@ async function animateIntroScreen() {
     });
 
 
-    animateIntroScreen();
+    setUpTitle();
 }
 
 export async function enterHomeScreen() {
