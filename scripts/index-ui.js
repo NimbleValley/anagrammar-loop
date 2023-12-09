@@ -33,23 +33,27 @@ async function setUpTitle() {
 }
 
 async function animateIntroScreen() {
+    var tl = new TimelineMax();
     titleContainer.style.top = "25vh";
     titleContainer.style.opacity = 1;
-    creditText.style.opacity = 0;
+    creditText.style.display = "none";
     await sleep(250);
     
     spans.forEach(element => {
         tl.fromTo(element, 0.5, {opacity: 0, fontSize: "6.5vw"}, {opacity: 1, fontSize: "10vw"}, '-=0.4');
     });
     
-    creditText.style.display = "block";
     tl.fromTo(creditText, 1.5, {opacity: 0, scale: 0.5}, {opacity: 1, scale: 1}, '-=1');
     
     tl.to(titleContainer, 1.5, {top: "5vh"}, '+=0.75');
-
+    
     tl.to(titleContainer, 1.5, {opacity: "0"}, '+=0.75');
-        
+    
     tl.fromTo(creditText, 0.5, {opacity: 1, scale: 1}, {opacity: 0, scale: 1.25}, '-=0.25');
+
+    await sleep(500);
+    creditText.style.display = "block";
+
     await sleep(7500);
 
     spans.forEach(element => {

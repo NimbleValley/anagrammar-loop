@@ -27,6 +27,7 @@ body {
     display: none;
     position: fixed;
     bottom: 5vh;
+    opacity: 0;
 }
 
 #credit-text:hover {
