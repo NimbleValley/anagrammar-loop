@@ -36,7 +36,6 @@ async function setUpTitle() {
 
 async function animateIntroScreen() {
     creditText.style.display = "none";
-    var tl = new TimelineMax();
     titleContainer.style.top = "25vh";
     titleContainer.style.opacity = 1;
     creditText.style.display = "none";
